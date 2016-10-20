@@ -1,0 +1,80 @@
+﻿
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Spotify Consumer</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+</body>
+<p>
+
+</p>
+</div>
+<style>
+    table {
+        width: 100%;
+    }
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    th, td {
+        padding: 5px;
+        text-align: left;
+    }
+    table#t01 tr:nth-child(even) {
+        background-color: #eee;
+    }
+    table#t01 tr:nth-child(odd) {
+        background-color: #fff;
+    }
+    table#t01 th {
+        background-color: black;
+        color: white;
+    }
+</style>
+<table style="border-style:2px solid black; width:80%">
+    <caption><h1>Albums</h1></caption>
+    
+    
+        <tr>
+            <th>Name</th>
+            <th>Artist</th>
+            <th>Release Date</th>
+            <th>Number Of Tracks</th>
+            <th>Popularity</th>
+        </tr>
+    
+     
+
+            @if (ViewBag.AlbumNames != null)
+            {
+                for (int i=0; i<5; i++)
+                //foreach (string albums in ViewBag.AlbumNames)
+                {
+                    <tr>
+                        
+                        <td>@ViewBag.AlbumNames[i]</td>
+                        <td>@ViewBag.albumArtist[i]</td>
+                        <td>@ViewBag.AlbumReleaseDate[i]</td>
+                        <td>@ViewBag.NumberOfTracks[i]</td>
+                        <td>@ViewBag.Popularity[i]</td>
+                    </tr>
+
+                }
+
+            }
+
+
+
+
+</table>
+</html>
+
